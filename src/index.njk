@@ -1,0 +1,360 @@
+---
+layout: base.njk
+title: Home
+---
+
+{# ===== Floating Background Orbs ===== #}
+<div class="floating-orbs">
+  <div class="orb orb--1"></div>
+  <div class="orb orb--2"></div>
+  <div class="orb orb--3"></div>
+  <div class="orb orb--4"></div>
+</div>
+
+{# ===== Hero ===== #}
+<section class="hero">
+  <img src="/assets/blue-spark.webp" alt="" class="hero__bg">
+
+  {# Left side network graphic (mirrored, dimmer) #}
+  <div class="hero__graphic hero__graphic--left" aria-hidden="true">
+    <svg class="network-svg" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <line x1="250" y1="250" x2="120" y2="140" class="net-line net-line--blue"/>
+      <line x1="250" y1="250" x2="380" y2="160" class="net-line net-line--gold"/>
+      <line x1="250" y1="250" x2="100" y2="360" class="net-line net-line--gold"/>
+      <line x1="250" y1="250" x2="350" y2="400" class="net-line net-line--blue"/>
+      <line x1="120" y1="140" x2="40" y2="80" class="net-line"/>
+      <line x1="380" y1="160" x2="450" y2="90" class="net-line"/>
+      <line x1="100" y1="360" x2="30" y2="430" class="net-line"/>
+      <circle r="2.5" class="net-packet net-packet--gold">
+        <animateMotion dur="3.5s" repeatCount="indefinite" path="M250,250 L120,140"/>
+      </circle>
+      <circle r="2.5" class="net-packet net-packet--blue">
+        <animateMotion dur="4s" repeatCount="indefinite" path="M380,160 L250,250"/>
+      </circle>
+      <circle cx="40" cy="80" r="4" class="net-node net-node--outer"/>
+      <circle cx="450" cy="90" r="4" class="net-node net-node--outer"/>
+      <circle cx="30" cy="430" r="4" class="net-node net-node--outer"/>
+      <circle cx="120" cy="140" r="7" class="net-node net-node--inner"/>
+      <circle cx="380" cy="160" r="7" class="net-node net-node--inner"/>
+      <circle cx="100" cy="360" r="7" class="net-node net-node--inner"/>
+      <circle cx="350" cy="400" r="7" class="net-node net-node--inner"/>
+      <circle cx="250" cy="250" r="12" class="net-node net-node--inner"/>
+    </svg>
+  </div>
+
+  {# Right side network graphic with Nostr logo center #}
+  <div class="hero__graphic" aria-hidden="true">
+    <svg class="network-svg" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+      {# Connection lines #}
+      <line x1="250" y1="250" x2="120" y2="140" class="net-line net-line--gold"/>
+      <line x1="250" y1="250" x2="380" y2="130" class="net-line net-line--blue"/>
+      <line x1="250" y1="250" x2="400" y2="310" class="net-line net-line--gold"/>
+      <line x1="250" y1="250" x2="100" y2="340" class="net-line net-line--blue"/>
+      <line x1="250" y1="250" x2="300" y2="430" class="net-line net-line--gold"/>
+      <line x1="250" y1="250" x2="170" y2="440" class="net-line net-line--blue"/>
+      <line x1="120" y1="140" x2="50" y2="70" class="net-line"/>
+      <line x1="380" y1="130" x2="450" y2="60" class="net-line"/>
+      <line x1="400" y1="310" x2="460" y2="380" class="net-line"/>
+      <line x1="100" y1="340" x2="40" y2="420" class="net-line"/>
+      <line x1="120" y1="140" x2="380" y2="130" class="net-line net-line--gold"/>
+      <line x1="400" y1="310" x2="300" y2="430" class="net-line net-line--blue"/>
+
+      {# Data packets traveling along lines #}
+      <circle r="3" class="net-packet net-packet--gold">
+        <animateMotion dur="3s" repeatCount="indefinite" path="M250,250 L120,140"/>
+      </circle>
+      <circle r="3" class="net-packet net-packet--blue">
+        <animateMotion dur="2.5s" repeatCount="indefinite" path="M250,250 L380,130"/>
+      </circle>
+      <circle r="3" class="net-packet net-packet--gold">
+        <animateMotion dur="3.2s" repeatCount="indefinite" path="M250,250 L400,310"/>
+      </circle>
+      <circle r="3" class="net-packet net-packet--blue">
+        <animateMotion dur="2.8s" repeatCount="indefinite" path="M120,140 L250,250"/>
+      </circle>
+      <circle r="3" class="net-packet net-packet--gold">
+        <animateMotion dur="3.5s" repeatCount="indefinite" path="M100,340 L250,250"/>
+      </circle>
+
+      {# Outer nodes #}
+      <circle cx="50" cy="70" r="5" class="net-node net-node--outer"/>
+      <circle cx="450" cy="60" r="5" class="net-node net-node--outer"/>
+      <circle cx="460" cy="380" r="5" class="net-node net-node--outer"/>
+      <circle cx="40" cy="420" r="5" class="net-node net-node--outer"/>
+
+      {# Inner nodes #}
+      <circle cx="120" cy="140" r="8" class="net-node net-node--inner"/>
+      <circle cx="380" cy="130" r="8" class="net-node net-node--inner"/>
+      <circle cx="400" cy="310" r="8" class="net-node net-node--inner"/>
+      <circle cx="100" cy="340" r="8" class="net-node net-node--inner"/>
+      <circle cx="300" cy="430" r="8" class="net-node net-node--inner"/>
+      <circle cx="170" cy="440" r="8" class="net-node net-node--inner"/>
+
+      {# Center pulse rings #}
+      <circle cx="250" cy="250" r="40" class="net-pulse net-pulse--1"/>
+      <circle cx="250" cy="250" r="40" class="net-pulse net-pulse--2"/>
+
+      {# Center Nostr logo #}
+      <g transform="translate(218, 218) scale(0.25)" opacity="0.4">
+        <path fill="var(--accent-gold)" d="M210.8 199.4c0 3.1-2.5 5.7-5.7 5.7h-68c-3.1 0-5.7-2.5-5.7-5.7v-15.5c.3-19 2.3-37.2 6.5-45.5 2.5-5 6.7-7.7 11.5-9.1 9.1-2.7 24.9-.9 31.7-1.2 0 0 20.4.8 20.4-10.7s-9.1-8.6-9.1-8.6c-10 .3-17.7-.4-22.6-2.4-8.3-3.3-8.6-9.2-8.6-11.2-.4-23.1-34.5-25.9-64.5-20.1-32.8 6.2.4 53.3.4 116.1v8.4c0 3.1-2.6 5.6-5.7 5.6H57.7c-3.1 0-5.7-2.5-5.7-5.7v-144c0-3.1 2.5-5.7 5.7-5.7h31.7c3.1 0 5.7 2.5 5.7 5.7 0 4.7 5.2 7.2 9 4.5 11.4-8.2 26-12.5 42.4-12.5 36.6 0 64.4 21.4 64.4 68.7v83.2ZM150 99.3c0-6.7-5.4-12.1-12.1-12.1s-12.1 5.4-12.1 12.1 5.4 12.1 12.1 12.1S150 106 150 99.3Z"/>
+      </g>
+    </svg>
+  </div>
+
+  <div class="hero__badge">
+    <svg width="14" height="14" viewBox="0 0 256 256" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M210.8 199.4c0 3.1-2.5 5.7-5.7 5.7h-68c-3.1 0-5.7-2.5-5.7-5.7v-15.5c.3-19 2.3-37.2 6.5-45.5 2.5-5 6.7-7.7 11.5-9.1 9.1-2.7 24.9-.9 31.7-1.2 0 0 20.4.8 20.4-10.7s-9.1-8.6-9.1-8.6c-10 .3-17.7-.4-22.6-2.4-8.3-3.3-8.6-9.2-8.6-11.2-.4-23.1-34.5-25.9-64.5-20.1-32.8 6.2.4 53.3.4 116.1v8.4c0 3.1-2.6 5.6-5.7 5.6H57.7c-3.1 0-5.7-2.5-5.7-5.7v-144c0-3.1 2.5-5.7 5.7-5.7h31.7c3.1 0 5.7 2.5 5.7 5.7 0 4.7 5.2 7.2 9 4.5 11.4-8.2 26-12.5 42.4-12.5 36.6 0 64.4 21.4 64.4 68.7v83.2ZM150 99.3c0-6.7-5.4-12.1-12.1-12.1s-12.1 5.4-12.1 12.1 5.4 12.1 12.1 12.1S150 106 150 99.3Z"/></svg>
+    Powered by the Nostr Protocol
+  </div>
+
+  <h1>Premier Nostr Relay<br>In Vietnam</h1>
+
+  <p class="hero__tagline">Fast, reliable, and censorship-resistant — powered by 10+ years of BitcoinVN trust.</p>
+
+  <div class="hero__actions">
+    <a href="{{ site.joinUrl }}" class="btn btn--primary btn--lg">Join BV Relay</a>
+    <a href="#about" class="btn btn--outline btn--lg">Learn More</a>
+  </div>
+
+  <div class="hero__scroll">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+  </div>
+</section>
+
+{# ===== Stats Bar ===== #}
+<div class="container reveal">
+  <div class="stats-bar">
+    <div class="stat-item">
+      <div class="stat-item__number" data-count="10" data-suffix="+">0+</div>
+      <div class="stat-item__label">Years of Operations</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-item__number">SEA</div>
+      <div class="stat-item__label">Server Location</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-item__number" data-count="24" data-suffix="/7">0/7</div>
+      <div class="stat-item__label">Monitoring</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-item__number" data-count="24" data-suffix="GB">0GB</div>
+      <div class="stat-item__label">Dedicated RAM</div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+{# ===== About Section (centered intro) ===== #}
+<section id="about" class="section-about reveal">
+  <div class="container">
+    <div class="section-about__content">
+      <div class="icon-circle icon-circle--gold">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      </div>
+      <h2>BitcoinVN Nostr Service</h2>
+      <p>We run a dedicated <a href="https://nostr.com" target="_blank">Nostr</a> relay so you can communicate freely — no central authority, no gatekeepers.</p>
+      <p>As platforms increasingly censor what you can say, Nostr gives you back control. Your keys, your identity, your voice.</p>
+    </div>
+  </div>
+</section>
+
+{# ===== What is Nostr — Feature Cards Grid ===== #}
+<section class="container reveal">
+  <h2 style="text-align:center; font-size:2rem; margin-bottom:0.5rem;">How Nostr Works</h2>
+  <p style="text-align:center; max-width:520px; margin:0 auto 2rem; color:var(--text-secondary);">A simple, open protocol for decentralized social communication.</p>
+  <div class="features-grid">
+    <div class="feature-card">
+      <div class="icon-circle icon-circle--gold">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+      </div>
+      <h3>Cryptographic Identity</h3>
+      <p>Your identity is a key pair that you fully own. Every message is signed, so authenticity is built in — no middleman needed.</p>
+    </div>
+    <div class="feature-card">
+      <div class="icon-circle icon-circle--blue">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+      </div>
+      <h3>Relay Network</h3>
+      <p>Relays store and forward your messages. Use multiple relays for redundancy and freedom — your data isn't locked to one server.</p>
+    </div>
+    <div class="feature-card">
+      <div class="icon-circle icon-circle--purple">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+      </div>
+      <h3>No Central Control</h3>
+      <p>No single company runs Nostr. Like email, it's an open protocol — anyone can build on it and join in.</p>
+    </div>
+    <div class="feature-card">
+      <div class="icon-circle icon-circle--emerald">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+      </div>
+      <h3>Censorship Resistant</h3>
+      <p>Banned from one relay? Just switch to another. Your followers find you automatically — no disruption.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+{# ===== Why Paid Relay — Zigzag Layout ===== #}
+<section class="zigzag reveal">
+  <div class="container">
+    <div class="zigzag__row">
+      <div class="zigzag__text">
+        <div class="icon-circle icon-circle--blue">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        </div>
+        <h2>Why join a paid relay?</h2>
+        <p>Free relays are slow and noisy. A paid relay is like upgrading from dial-up to fiber — faster, cleaner, and spam-free.</p>
+        <p>Because there's a cost to join, bots and junk stay out. You get a focused community and lightning-fast message delivery.</p>
+      </div>
+      <div class="zigzag__visual">
+        <div class="graphic-card graphic-card--comparison">
+          <div class="comparison-row">
+            <span class="comparison-label">Free Relay</span>
+            <div class="comparison-bar">
+              <div class="comparison-bar__fill comparison-bar__fill--slow" data-bar-width="12"></div>
+            </div>
+            <span class="comparison-value comparison-value--dim">Slow</span>
+          </div>
+          <div class="comparison-row">
+            <span class="comparison-label comparison-label--highlight">Paid Relay</span>
+            <div class="comparison-bar">
+              <div class="comparison-bar__fill comparison-bar__fill--fast" data-bar-width="92"></div>
+            </div>
+            <span class="comparison-value comparison-value--highlight" data-count="100" data-suffix="x">0x</span>
+          </div>
+          <div class="comparison-tags">
+            <span class="tag tag--blue">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+              Speed
+            </span>
+            <span class="tag tag--emerald">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              No Spam
+            </span>
+            <span class="tag tag--gold">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+              Uptime
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+{# ===== Why BV Relay — Zigzag Reverse ===== #}
+<section class="zigzag reveal">
+  <div class="container">
+    <div class="zigzag__row zigzag__row--reverse">
+      <div class="zigzag__text">
+        <div class="icon-circle icon-circle--gold">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h2>Why choose BitcoinVN Relay?</h2>
+        <p>Backed by <a href="{{ site.exchangeUrl }}" target="_blank">BitcoinVN</a> — Vietnam's leading Bitcoin exchange with 10+ years of operations. We're not going anywhere.</p>
+        <p>Dedicated infrastructure in South-East Asia, professional monitoring, and a long-term commitment to the Nostr ecosystem.</p>
+      </div>
+      <div class="zigzag__visual">
+        <div class="graphic-card graphic-card--timeline">
+          <div class="timeline-item">
+            <div class="timeline-dot timeline-dot--gold"></div>
+            <div class="timeline-content">
+              <span class="timeline-year">2014</span>
+              <span class="timeline-text">BitcoinVN founded</span>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot timeline-dot--blue"></div>
+            <div class="timeline-content">
+              <span class="timeline-year">2020</span>
+              <span class="timeline-text">Nostr relay launched</span>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot timeline-dot--emerald"></div>
+            <div class="timeline-content">
+              <span class="timeline-year">2024</span>
+              <span class="timeline-text">Dedicated SEA infrastructure</span>
+            </div>
+          </div>
+          <div class="timeline-item timeline-item--active">
+            <div class="timeline-dot timeline-dot--gold timeline-dot--pulse"></div>
+            <div class="timeline-content">
+              <span class="timeline-year">Now</span>
+              <span class="timeline-text">10+ years and going strong</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+{# ===== Whitelisting Benefits — List Layout ===== #}
+<section class="benefits reveal">
+  <div class="container">
+    <h2>Member Benefits</h2>
+    <p class="benefits__subtitle">What you get when you join BV Relay.</p>
+    <ul class="benefits__list">
+      <li class="benefit-item">
+        <div class="benefit-item__icon benefit-item__icon--gold">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent-gold)" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        </div>
+        <div>
+          <h3>Priority Delivery</h3>
+          <p>Your messages go first — less bandwidth competition, faster propagation.</p>
+        </div>
+      </li>
+      <li class="benefit-item">
+        <div class="benefit-item__icon benefit-item__icon--blue">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent-blue)" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <div>
+          <h3>Faster Sync</h3>
+          <p>Dedicated bandwidth means your Nostr clients sync quickly every time.</p>
+        </div>
+      </li>
+      <li class="benefit-item">
+        <div class="benefit-item__icon benefit-item__icon--purple">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent-purple)" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div>
+          <h3>No Spam</h3>
+          <p>Paid access keeps bots and junk out. Your feed stays clean and focused.</p>
+        </div>
+      </li>
+      <li class="benefit-item">
+        <div class="benefit-item__icon benefit-item__icon--emerald">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent-emerald)" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <div>
+          <h3>Always Online</h3>
+          <p>24/7 monitoring and dedicated hardware — your notes and DMs always get through.</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<hr class="divider">
+
+{# ===== Final CTA ===== #}
+<section class="cta-section reveal">
+  <div class="container">
+    <h2>Ready to join?</h2>
+    <p>Add our relay to your Nostr client and start enjoying a faster experience.</p>
+    <button class="wss-copy" data-copy="{{ site.wsAddress }}" title="Click to copy">
+      <span class="wss-copy__text">{{ site.wsAddress }}</span>
+      <svg class="wss-copy__icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+      <span class="wss-copy__toast">Copied!</span>
+    </button>
+    <br>
+    <a href="{{ site.joinUrl }}" class="btn btn--primary btn--lg">Join BV Relay</a>
+  </div>
+</section>

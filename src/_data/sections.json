@@ -1,0 +1,41 @@
+[
+  {
+    "id": "about",
+    "title": "BitcoinVN Nostr Service",
+    "paragraphs": [
+      "We provide a secure and reliable Nostr relay to support decentralized communication.",
+      "As centralized communication platforms face growing pressure to censor opinions — either openly or subtly — the <a href=\"https://nostr.com\" target=\"_blank\">Nostr protocol</a> offers a way to preserve the freedom of communication and information exchange.",
+      "Nostr (Notes and Other Stuff Transmitted by Relays) is an open protocol where every message is cryptographically signed by its author. There is no central server, no single company in control. Your identity is a key pair — you own it, and no one can take it away.",
+      "Relays are the backbone of the network: servers that store and forward signed messages between clients. By connecting to multiple relays, users gain redundancy, censorship resistance, and the freedom to communicate on their own terms."
+    ]
+  },
+  {
+    "id": "whyPaidRelay",
+    "title": "Why should I join a paid Nostr relay?",
+    "paragraphs": [
+      "If you want to get the most out of your Nostr experience, signing up for at least one (or a few) paid relays is a must.",
+      "Relying solely on public relays will make your Nostr experience painfully slow. The difference between using paid relays and only using public ones is like comparing internet speeds in 2005 to those in 2015.",
+      "Paid relays also act as a natural spam filter. Because there is a cost to access, bots and low-effort spam are kept out — leading to a cleaner, higher-quality feed and a more focused community.",
+      "With fewer users competing for bandwidth and dedicated infrastructure behind the service, paid relays deliver faster message propagation, better uptime, and more reliable syncing across your Nostr clients."
+    ]
+  },
+  {
+    "id": "whyBvRelay",
+    "title": "Why join the BitcoinVN Relay?",
+    "paragraphs": [
+      "There are many solid relay operators out there, and for an ideal Nostr experience, you may want to use more than one paid relay to ensure sufficient redundancy.",
+      "One key advantage of choosing BitcoinVN's relay is the robust backing of our operations. Our Nostr relay is supported by the resources of <a href=\"https://bitcoinvn.io/?deposit=vnd&settle=btc\" target=\"_blank\">BitcoinVN, Vietnam's premier Bitcoin exchange</a> with over a decade of proven reliability.",
+      "This means you can trust that our relay won't simply \"disappear\" without warning, providing you with a stable and dependable service. We are committed to the Nostr ecosystem for the long term.",
+      "Our relay runs on dedicated infrastructure based in South-East Asia, providing low-latency connections for users in the region and beyond. Professional operations, regular maintenance, and continuous monitoring ensure your messages are always delivered."
+    ]
+  },
+  {
+    "id": "whitelisting",
+    "title": "Whitelisting",
+    "paragraphs": [
+      "Our whitelisting service offers you priority access to our Nostr relay, ensuring faster and more reliable connections.",
+      "On a paid relay, your messages are prioritized over those on free relays. This means less competition for bandwidth, leading to quicker and more reliable communication.",
+      "Whitelisted users benefit from dedicated bandwidth allocation, faster sync times when connecting with Nostr clients, and priority message delivery. Your notes, reactions, and DMs propagate through the network without the delays common on overloaded public relays."
+    ]
+  }
+]

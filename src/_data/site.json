@@ -1,0 +1,11 @@
+{
+  "name": "BV Relay",
+  "description": "Premier Nostr Relay In Vietnam",
+  "wsAddress": "wss://nostr.bitcoinvn.io",
+  "joinUrl": "https://nostr.bitcoinvn.io/invoices",
+  "exchangeUrl": "https://bitcoinvn.io/?deposit=vnd&settle=btc",
+  "nav": [
+    { "label": "Specs", "url": "/specs/" },
+    { "label": "Terms of Service", "url": "/tos/" }
+  ]
+}

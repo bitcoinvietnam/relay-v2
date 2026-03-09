@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ title or site.name }} — {{ site.description }}</title>
+  <meta name="description" content="{{ description or site.description }}">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  {% include "header.njk" %}
+
+  <main>
+    {{ content | safe }}
+  </main>
+
+  {% include "footer.njk" %}
+
+  <script>
+    // Navbar scroll effect
+    const navbar = document.querySelector('.navbar');
+    function onScroll() {
+      navbar.classList.toggle('scrolled', window.scrollY > 50);
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    // Mobile menu toggle
+    const toggle = document.querySelector('.navbar__toggle');
+    const links = document.querySelector('.navbar__links');
+    if (toggle && links) {
+      toggle.addEventListener('click', () => {
+        links.classList.toggle('open');
+      });
+    }
+
+    // Scroll reveal
+    const reveals = document.querySelectorAll('.reveal');
+    if (reveals.length) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            e.target.classList.add('visible');
+            observer.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.1 });
+      reveals.forEach(el => observer.observe(el));
+    }
+
+    // Count-up animation for stats and values
+    const countEls = document.querySelectorAll('[data-count]');
+    if (countEls.length) {
+      const countObserver = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            const el = e.target;
+            const target = parseInt(el.dataset.count, 10);
+            const suffix = el.dataset.suffix || '';
+            const duration = 1500;
+            const start = performance.now();
+            function tick(now) {
+              const progress = Math.min((now - start) / duration, 1);
+              const eased = 1 - Math.pow(1 - progress, 3);
+              el.textContent = Math.round(eased * target) + suffix;
+              if (progress < 1) requestAnimationFrame(tick);
+            }
+            requestAnimationFrame(tick);
+            countObserver.unobserve(el);
+          }
+        });
+      }, { threshold: 0.5 });
+      countEls.forEach(el => countObserver.observe(el));
+    }
+
+    // Bar fill animation on scroll
+    const barFills = document.querySelectorAll('[data-bar-width]');
+    if (barFills.length) {
+      const barObserver = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            e.target.style.width = e.target.dataset.barWidth + '%';
+            barObserver.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.3 });
+      barFills.forEach(el => barObserver.observe(el));
+    }
+
+    // Copy WSS address
+    document.querySelectorAll('.wss-copy').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const text = btn.dataset.copy;
+        navigator.clipboard.writeText(text).then(() => {
+          btn.classList.add('copied');
+          setTimeout(() => btn.classList.remove('copied'), 2000);
+        });
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+{
+  "items": [
+    { "label": "Location", "value": "South East Asia" },
+    { "label": "CPU", "value": "Intel Pentium Silver N6005 Quad Core" },
+    { "label": "Memory", "value": "24GB RAM" },
+    { "label": "Storage", "value": "120GB SSD" }
+  ]
+}

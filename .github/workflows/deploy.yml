@@ -36,7 +36,9 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Build
-        run: pnpm build
+        run: pnpm build --pathprefix="/relay-v2/"
+        env:
+          PATH_PREFIX: /relay-v2/
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

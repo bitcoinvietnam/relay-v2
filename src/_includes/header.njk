@@ -1,13 +1,13 @@
 <nav class="navbar">
   <div class="navbar__inner">
-    <a href="/" class="navbar__brand">
-      <img src="/assets/bvn-star.svg" alt="BV Relay" width="28" height="28">
+    <a href="{{ '/' | url }}" class="navbar__brand">
+      <img src="{{ '/assets/bvn-star.svg' | url }}" alt="BV Relay" width="28" height="28">
       BitcoinVN <span class="navbar__brand-accent">Relay</span>
     </a>
     <button class="navbar__toggle" aria-label="Toggle menu">&#9776;</button>
     <ul class="navbar__links">
       {% for link in site.nav %}
-        <li><a href="{{ link.url }}">{{ link.label }}</a></li>
+        <li><a href="{{ link.url | url }}">{{ link.label }}</a></li>
       {% endfor %}
       <li><a href="{{ site.joinUrl }}" class="btn btn--outline btn--sm">Join Relay</a></li>
     </ul>
